@@ -73,22 +73,19 @@ console.log(asalSayilar)
 /******  Sifre Olusturma  **************/
 
 let sifreUzunlugu = Math.floor(Math.random() * 8 + 8),
-  kucukHarfler = 'abcdefghijklmnopqrstuvwxyz',
-  buyukHarfler = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
-  rakamlar = '0123456789',
-  ozelKarakterler = '~`!@#$%^&*()_+-={}[]:";\'<>?,./|\\',
   tumKarakterler = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789~`!@#$%^&*()_+-={}[]:";\'<>?,./|\\',
   sifre = ''
 
-sifre += `${kucukHarfler[Math.floor(Math.random() * 26 )]}${buyukHarfler[Math.floor(Math.random() * 26 )]}${rakamlar[Math.floor(Math.random() * 10 )]}${ozelKarakterler[Math.floor(Math.random() * 32 )]}`
 console.log(sifreUzunlugu)
+console.log(sifre)
 
 for (let i = 1; i <= 50; i++) {
-  for (let j = 1; j < sifreUzunlugu - 4; j++) {
+  for (let j = 1; j <= sifreUzunlugu; j++) {
     sifre += `${tumKarakterler[Math.floor(Math.random() * 94 )]}`
   }
-  sifre += `###`
+  sifre += ' -*- '
 }
+
 console.log(sifre)
 
 /********* SekiL Olusturma ***********/
