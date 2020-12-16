@@ -1,5 +1,5 @@
-const month = 3; // yilin ucuncu ayi --- mart
-const day = 12; // ayin gunu
+const month = 1; // yilin ucuncu ayi --- mart
+const day = 2; // ayin gunu
 
 //**********************/
 
