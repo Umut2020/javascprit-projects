@@ -9,19 +9,17 @@ const notes = [
   ['Urs', 49, 45, 56, 67],
   ['Monika', 49, 42, 16, 62]
 ]
-
-// ic arraydeki ders index numaralarinin degiskene atadim.
+// ic arraydeki ders index numaralarinin degiskene atanmasi
 const indexofAd = 0
 const indexofMat = 1
 const indexofDeutsch = 2
 const indexofEnglisch = 3
 const indexofGeo = 4
-// ders adlari degiskenlere atanmistir
+// ders adlarinin degiskenlere atanmasi
 const matAdi = 'Mathematics'
 const almancaAdi = 'Deutsch'
 const ingilizceAdi = 'Englisch'
 const cografyaAdi = 'Geography'
-
 /**
  * Asagidaki dersinOrtalamaNotu fonksiyonuna dersAdi paremetresi girildiginde 
  * girilen dersin sinif ortalamsini gosterir(dersAdi degiskenide degistirillebilir)
@@ -73,15 +71,12 @@ function yetmisPuanUstuNotuOlanlariBulma (liste) {
   }
   console.log(yetmisPuanUstuNotuOlanlar)
 }
-
 yetmisPuanUstuNotuOlanlariBulma(notes)
-
 /**
  * Asagidaki ortalamaninUstundeKimVar fonksiyonu ile dersAdi paremetresine
  * girilen derste ortalamanin uzerindeki ogreciler listelenmistir
  * (Bu fonksiyonda ortlamalar icin dersinOrtalamaNotu fonksiyonu kullanilmistir) 
  */
-
 let ortalamaninUstundeOlanlar = []
 ortalamaninUstundeKimVar(ingilizceAdi)
 
@@ -118,7 +113,6 @@ function ortalamaninUstundeKimVar (dersAdi) {
  * girilen list ile en yuksek puani alan ogrencinin notu ismi ve ders adi gosterilmistir
  *  
  */
-
 function enIyiNotuBulma (liste) {
   let enIyiNot = 0
   let enIyiNotuAlanOgrenci = null
@@ -143,13 +137,11 @@ function enIyiNotuBulma (liste) {
   console.log(`Sinifta en iyi nota sahip ogrenci olan ${enIyiNotuAlanOgrenci} nin ${enIyiNotunOlduguDers} dersindeki notu ${enIyiNot}`)
 }
 enIyiNotuBulma(notes)
-
 /**
  * Asagidaki enKotuNotuBulma fonksiyonu ile liste paremetresine
  * girilen list ile en dusuk puani alan ogrencinin notu ismi ve ders adi gosterilmistir
  * (sonuc olarak sinifin en kotu oldugu ders)  
  */
-
 function enKotuNotuBulma (liste) {
   let enKotuNot = 100
   let enKotuNotuAlanOgrenci = null
@@ -174,13 +166,11 @@ function enKotuNotuBulma (liste) {
   console.log(`Sinifta en kotu nota sahip ogrenci olan ${enKotuNotuAlanOgrenci} nin ${enKotuNotunOlduguDers} dersindeki notu ${enKotuNot}`)
 }
 enKotuNotuBulma(notes)
-
 /**
  * Asagidaki dersinEniyiOgrencisi fonksiyonu ile dersAdi paremetresine
  * girilen ders adi ile o dersteki en yuksek puani alan yani eniyi ogrenciyi aldigi not
  * ile birlij=kte gostermistir  
  */
-
 function dersinEnIyiOgrencisi (dersAdi) {
   let enYuksekNot = 0
   let dersinEnIyiOgrencisi = null
@@ -216,4 +206,4 @@ function dersinEnIyiOgrencisi (dersAdi) {
   return console.log(`${dersAdi} dersinde en iyi ogrenci ${dersinEnIyiOgrencisi} dir. Puani : ${enYuksekNot}`)
 }
 
-dersinEnIyiOgrencisi(ingilizceAdi)
+dersinEnIyiOgrencisi(matAdi)
