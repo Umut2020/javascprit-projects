@@ -20,12 +20,15 @@ const matAdi = 'Mathematics'
 const almancaAdi = 'Deutsch'
 const ingilizceAdi = 'Englisch'
 const cografyaAdi = 'Geography'
+// ders adlarinin listelendigi array
+const dersAdiListesi = [ 'Mathematics' , 'Deutsch' , 'Englisch' , 'Geography' ]
+
 /**
  * Asagidaki dersinOrtalamaNotu fonksiyonuna dersAdi paremetresi girildiginde 
  * girilen dersin sinif ortalamsini gosterir(dersAdi degiskenide degistirillebilir)
  * NOT:fonksiyonu asagida tekrar kullandigim icin ort sayi degeri olarak return ettim ; konsola yazdirmadim
  */
-let dersAdi = matAdi
+let dersAdi = cografyaAdi
 dersinOrtalamaNotu(dersAdi)
 
 function dersinOrtalamaNotu (dersAdi) {
@@ -51,20 +54,20 @@ function dersinOrtalamaNotu (dersAdi) {
 }
 console.log(dersAdi + ' ortalamasi ' + dersinOrtalamaNotu(dersAdi))
 /**
- * Asagidaki fonksiyon ile  notes dizisinin girilmesi ile 
+ * Asagidaki fonksiyon ile  pliste paremetere dizisinin girilmesi ile 
  * herhangi bir dersten 70 puan ustu alanlar 
  * yetmisPuanUstuNotuOlanlar listinin icersine alinmistir
  * ikinci if dongusu birden fazla dersten 70 puan alan ogrencinin 
  * listin icine tekrar yazilmamasi icin kullanilmistir
  */
 
-function yetmisPuanUstuNotuOlanlariBulma (liste) {
+function yetmisPuanUstuNotuOlanlariBulma (pliste) {
   let yetmisPuanUstuNotuOlanlar = []
-  for (let i = 0; i < notes.length; i++) {
-    for (let j = 0; j < notes[i].length; j++) {
-      if (notes[i][j] > 70) {
-        if (yetmisPuanUstuNotuOlanlar.indexOf(notes[i][indexofAd]) === -1) {
-          yetmisPuanUstuNotuOlanlar.push(notes[i][indexofAd])
+  for (let i = 0; i < pliste.length; i++) {
+    for (let j = 0; j < pliste[i].length; j++) {
+      if (pliste[i][j] > 70) {
+        if (yetmisPuanUstuNotuOlanlar.indexOf(pliste[i][indexofAd]) === -1) {
+          yetmisPuanUstuNotuOlanlar.push(pliste[i][indexofAd])
         }
       }
     }
@@ -108,68 +111,71 @@ function ortalamaninUstundeKimVar (dersAdi) {
   }
   return console.log(`${dersAdi} dersinde ${dersinOrtalamaNotu(dersAdi)} ortalamasinin uzerinde olan ogrenciler : ${ortalamaninUstundeOlanlar}`)
 }
+
 /**
- * Asagidaki enIyiNotuBulma fonksiyonu ile liste paremetresine
- * girilen list ile en yuksek puani alan ogrencinin notu ismi ve ders adi gosterilmistir
- *  
+ * Asagidaki enIyiOrtalamayaSahipDersiBulma fonksiyonu ile liste paremetresine
+ * girilen dersi ismi  listesi  ile en yuksek ortalamaya sahip olunan ders gosterilir.Bunun icin once 
+ * en yuksek ortalamanin oldugu dersin notunu bulan fonksiyon yapilmistir  
  */
-function enIyiNotuBulma (liste) {
-  let enIyiNot = 0
-  let enIyiNotuAlanOgrenci = null
-  let enIyiNotunOlduguDers = null
-  for (let i = 0; i < notes.length; i++) {
-    for (let j = 1; j < notes[i].length; j++) {
-      if (notes[i][j] > enIyiNot) {
-        enIyiNot = notes[i][j]
-        enIyiNotuAlanOgrenci = notes[i][indexofAd]
-        if (j === indexofMat) {
-          enIyiNotunOlduguDers = matAdi
-        }else if (j === indexofDeutsch) {
-          enIyiNotunOlduguDers = almancaAdi
-        }else if (j === indexofEnglisch) {
-          enIyiNotunOlduguDers = ingilizceAdi
-        }else if (j === indexofGeo) {
-          enIyiNotunOlduguDers = cografyaAdi
-        }
-      }
+let enIyiOrtalamayaSahipDersNotu = 0
+let enIyiOrtalamayaSahipDers = ''
+
+function enIyiOrtalamayaSahipDersNotunuBulma (plist) {
+  for (let i = 0; i < plist.length; i++) {
+    if (dersinOrtalamaNotu(plist[i]) > enIyiOrtalamayaSahipDersNotu) {
+      enIyiOrtalamayaSahipDersNotu = dersinOrtalamaNotu(plist[i])
     }
   }
-  console.log(`Sinifta en iyi nota sahip ogrenci olan ${enIyiNotuAlanOgrenci} nin ${enIyiNotunOlduguDers} dersindeki notu ${enIyiNot}`)
+  return enIyiOrtalamayaSahipDersNotu
 }
-enIyiNotuBulma(notes)
-/**
- * Asagidaki enKotuNotuBulma fonksiyonu ile liste paremetresine
- * girilen list ile en dusuk puani alan ogrencinin notu ismi ve ders adi gosterilmistir
- * (sonuc olarak sinifin en kotu oldugu ders)  
- */
-function enKotuNotuBulma (liste) {
-  let enKotuNot = 100
-  let enKotuNotuAlanOgrenci = null
-  let enKotuNotunOlduguDers = null
-  for (let i = 0; i < notes.length; i++) {
-    for (let j = 1; j < notes[i].length; j++) {
-      if (notes[i][j] < enKotuNot) {
-        enKotuNot = notes[i][j]
-        enKotuNotuAlanOgrenci = notes[i][indexofAd]
-        if (j === indexofMat) {
-          enKotuNotunOlduguDers = matAdi
-        }else if (j === indexofDeutsch) {
-          enKotuNotunOlduguDers = almancaAdi
-        }else if (j === indexofEnglisch) {
-          enKotuNotunOlduguDers = ingilizceAdi
-        }else if (j === indexofGeo) {
-          enKotuNotunOlduguDers = cografyaAdi
-        }
-      }
+
+function enIyiOrtalamayaSahipDersiBulma (plist) {
+  enIyiOrtalamayaSahipDersNotu = enIyiOrtalamayaSahipDersNotunuBulma(plist)
+
+  for (let i = 0; i < plist.length; i++) {
+    if (dersinOrtalamaNotu(plist[i]) == enIyiOrtalamayaSahipDersNotu) {
+      enIyiOrtalamayaSahipDers = plist[i]
     }
   }
-  console.log(`Sinifta en kotu nota sahip ogrenci olan ${enKotuNotuAlanOgrenci} nin ${enKotuNotunOlduguDers} dersindeki notu ${enKotuNot}`)
+
+  return console.log(`Sinifin en iyi ortalamaya sahip oldugu ders : ${enIyiOrtalamayaSahipDers}`)
 }
-enKotuNotuBulma(notes)
+
+enIyiOrtalamayaSahipDersiBulma(dersAdiListesi)
+
+/**
+ * Asagidaki enKotuOrtalamayaSahipDersiBulma fonksiyonu ile liste paremetresine
+ * girilen dersi ismi  listesi  ile en dusuk ortalamaya sahip olunan ders gosterilir.Bunun icin once 
+ * en kotu ortalamanin oldugu dersin notunu bulan fonksiyon yapilmistir  
+ */
+let enKotuOrtalamayaSahipDersNotu = dersinOrtalamaNotu(dersAdi)
+let enKotuOrtalamayaSahipDers = ''
+
+function enKotuOrtalamayaSahipDersNotunuBulma (plist) {
+  for (let i = 0; i < plist.length; i++) {
+    if (dersinOrtalamaNotu(plist[i]) < enKotuOrtalamayaSahipDersNotu) {
+      enKotuOrtalamayaSahipDersNotu = dersinOrtalamaNotu(plist[i])
+    }
+  }
+  return enKotuOrtalamayaSahipDersNotu
+}
+
+function enKotuOrtalamayaSahipDersiBulma (plist) {
+  enKotuOrtalamayaSahipDersNotu = enKotuOrtalamayaSahipDersNotunuBulma(plist)
+
+  for (let i = 0; i < plist.length; i++) {
+    if (dersinOrtalamaNotu(plist[i]) == enKotuOrtalamayaSahipDersNotu) {
+      enKotuOrtalamayaSahipDers = plist[i]
+    }
+  }
+
+  return console.log(`Sinifin en kotu ortalamaya sahip oldugu ders : ${enKotuOrtalamayaSahipDers}`)
+}
+enKotuOrtalamayaSahipDersiBulma(dersAdiListesi)
 /**
  * Asagidaki dersinEniyiOgrencisi fonksiyonu ile dersAdi paremetresine
  * girilen ders adi ile o dersteki en yuksek puani alan yani eniyi ogrenciyi aldigi not
- * ile birlij=kte gostermistir  
+ * ile birlikte gostermistir  
  */
 function dersinEnIyiOgrencisi (dersAdi) {
   let enYuksekNot = 0
