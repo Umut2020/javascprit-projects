@@ -37,11 +37,18 @@ function kantonVeMevsimeGoreBalikBulma (liste , zaman , yer) {
   )
   return yerVeMevsimeGoreBalikBulma
 }
-
 /********************************** */
-
+function sonKullanimTarihlerineBakma () {
+  let sonKullanimTarihi = []
+  let SKT = new Date()
+  fishFarm.filter(d => {
+    SKT = d.entryDate
+    SKT.setDate(SKT.getDate() + d.durationInDays)
+    sonKullanimTarihi.push(SKT + ' ' + d.fishType)
+  })
+  return sonKullanimTarihi
+}
 /********************************** */
-
 function abUlkelerindenGelenBaliklariBulma () {
   const abUlkeleri = ['AUSTRIA', 'ITALY', 'BELGIUM', 'LATVIA' , 'BULGARIA', 'LITHUANIA', 'CROATIA', 'LUXEMBOURG', 'CYPRUS', 'MALTA', 'CZECHIA', 'NETHERLANDS', 'DENMARK', 'POLAND', 'ESTONIA', 'PORTUGAL', 'FINLAND', 'ROMANIA', 'FRANCE', 'SLOVAKIA', 'GERMANY', 'SLOVENIA', 'GREECE'  , 'SPAIN', 'HUNGARY', 'SWEDEN', 'IRELAND']
   let abUlkelerindenGelenBaliklar = []
@@ -55,7 +62,6 @@ function abUlkelerindenGelenBaliklariBulma () {
   )
   return abUlkelerindenGelenBaliklar
 }
-
 function onFranklikAvrupaBaliklariniBulmaVeSiralama () {
   let alfabetikBaliksirasi = []
   let onFrankinAltindakiBaliklar = fiyatAraligindaBalikBulma(fishFarm , 0 , 10)
@@ -77,7 +83,6 @@ function alfabetikSiralama (liste) {
 }
 
 /************************************** */
-
 function tumStoklardakiBalikDurumu () {
   let total = 0
   fishFarm.map((stoklar) => {
@@ -85,9 +90,7 @@ function tumStoklardakiBalikDurumu () {
   })
   return total
 }
-
 /************************************* */
-
 function enPahaliBaligiBulma () {
   let karsilastirmaMiktari = 0
   let enPahaliBalik = ''
@@ -99,9 +102,7 @@ function enPahaliBaligiBulma () {
   })
   return `En pahali balik :  ${enPahaliBalik}`
 }
-
 /***************************************** */
-
 function enUzunSureDayanabilenBaliklarinUlkesiniBulma (liste) {
   let karsilastirmaMiktari = 0
   let enUzunSureDayanabilenBaliklarinGeldikleriUlkeler = []
@@ -113,7 +114,6 @@ function enUzunSureDayanabilenBaliklarinUlkesiniBulma (liste) {
   })
   return `En fazla tuketim suresine sahip baliklarin geldigi ulkeler :  ${enUzunSureDayanabilenBaliklarinGeldikleriUlkeler}`
 }
-
 /************************************** */
 function remondeSwissRegionSucht () {
   let remondeRegion = []
@@ -153,9 +153,7 @@ function listOrtalamasiBulma (liste) {
   )
   return toplam / liste.length
 }
-
 /************************************** */
-
 function toplama (liste) {
   let toplam = 0
   liste.map((sayilar) => {
@@ -178,9 +176,7 @@ function kantonTicinoStokBalikAdedi (liste) {
   })
   return (toplama(kantonTicinoBalikStokListesi)) / listOrtalamasiBulma(kantonTicinoBalikStokListesiTaneBalikGramListesi)
 }
-
 /************************************** */
-
 function sezonaVeKantonaGoreOrtalamaBalikGramajiBulma (liste , sezon , kanton) {
   let yazlikSezondaZurichteCikanlistesi = []
   let yazlikSezondaZurichteCikanBalikGramajlistesi = []

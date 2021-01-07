@@ -111,58 +111,28 @@ const fishFarm = [
     saleLocations: ['ZH', 'VD', 'BS', 'TI', 'SG']
   }
 ]
-
-// // stok miktari girildiginde baliklarin listesine ulasilabilir
-// console.log(balikStogunuBulma(fishFarm , 500))
-
-// // alt ve ust limitler girildiginde balik listesi ekrana yazdirilir
-// console.log(fiyatAraligindaBalikBulma(fishFarm , 9 , 12))
-
-// // kanton ve mevsim bilgisi girilerek balik listesine ulasilabilir
-
-// console.log(kantonVeMevsimeGoreBalikBulma(fishFarm , 'Winter' , 'BE'))
-
+// stok miktari girildiginde baliklarin listesine ulasilabilir
+console.log(balikStogunuBulma(fishFarm , 500))
+// alt ve ust limitler girildiginde balik listesi ekrana yazdirilir
+console.log(fiyatAraligindaBalikBulma(fishFarm , 9 , 12))
+// kanton ve mevsim bilgisi girilerek balik listesine ulasilabilir
+console.log(kantonVeMevsimeGoreBalikBulma(fishFarm , 'Winter' , 'BE'))
 /******************************** */
-function sonKullanimTarihlerineBakma () {
-  let sonKullanimTarihi = []
-  let SKT = new Date()
-  fishFarm.filter(d => {
-    SKT = d.entryDate
-    SKT.setDate(SKT.getDate() + d.durationInDays)
-    sonKullanimTarihi.push(SKT)
-  })
-  return sonKullanimTarihi
-}
-console.log(sonKullanimTarihlerineBakma()
-
+console.log(sonKullanimTarihlerineBakma())
 /**
  * on frankin altinda ve Avrupadan gelen baliklarin sirali listesi
  * paremetresiz fonksiyon ile
  */
-
-// console.log(onFranklikAvrupaBaliklariniBulmaVeSiralama())
-
-// //
-
+console.log(onFranklikAvrupaBaliklariniBulmaVeSiralama())
 // tum stoklardaki baliklari toplayan paremetresiz fonksiyon
-
-// console.log(tumStoklardakiBalikDurumu())
-
-// // // en pahali baligi paremetresi fonksiyon ile bulma
-
-// // console.log(enPahaliBaligiBulma())
-
-// // //****************************** */
-
-// // console.log(enUzunSureDayanabilenBaliklarinUlkesiniBulma(fishFarm))
-
-// // //************ */ 
-
-// console.log(listOrtalamasiBulma(kisSonbaharVeRemondeRegionunFiyatListesiniBulma()))
-
-/********************** */
-
-// console.log(kantonTicinoStokBalikAdedi(fishFarm))
-
-//
-// console.log(sezonaVeKantonaGoreOrtalamaBalikGramajiBulma(fishFarm , 'Summer' , 'ZH'))
+console.log(tumStoklardakiBalikDurumu())
+// en pahali baligi paremetresi fonksiyon ile bulma
+console.log(enPahaliBaligiBulma())
+// ****************************** */
+console.log(enUzunSureDayanabilenBaliklarinUlkesiniBulma(fishFarm))
+// ******************************* */ 
+console.log(listOrtalamasiBulma(kisSonbaharVeRemondeRegionunFiyatListesiniBulma()))
+/*********************************** */
+console.log(kantonTicinoStokBalikAdedi(fishFarm))
+/**************************** */
+console.log(sezonaVeKantonaGoreOrtalamaBalikGramajiBulma(fishFarm , 'Summer' , 'ZH'))
