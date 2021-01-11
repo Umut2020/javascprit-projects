@@ -38,16 +38,13 @@ function kantonVeMevsimeGoreBalikBulma (liste , zaman , yer) {
   return yerVeMevsimeGoreBalikBulma
 }
 /********************************** */
-function sonKullanimTarihlerineBakma () {
-  let sonKullanimTarihi = []
-  let SKT = new Date()
-  fishFarm.filter(d => {
-    SKT = d.entryDate
-    SKT.setDate(SKT.getDate() + d.durationInDays)
-    sonKullanimTarihi.push(SKT + ' ' + d.fishType)
-  })
-  return sonKullanimTarihi
+function orderExpirationDate (fishFarm) {
+  fishFarm.forEach(product => product.entryDate = product.entryDate.setDate(product.entryDate.getDate() + product.durationInDays))
+  let sortedDate = fishFarm.sort((a, b) => a.entryDate - b.entryDate)
+  let result = sortedDate.map(product => product.fishType + ' --->  ' + new Date(product.entryDate))
+  return result.join('\n')
 }
+
 /********************************** */
 function abUlkelerindenGelenBaliklariBulma () {
   const abUlkeleri = ['AUSTRIA', 'ITALY', 'BELGIUM', 'LATVIA' , 'BULGARIA', 'LITHUANIA', 'CROATIA', 'LUXEMBOURG', 'CYPRUS', 'MALTA', 'CZECHIA', 'NETHERLANDS', 'DENMARK', 'POLAND', 'ESTONIA', 'PORTUGAL', 'FINLAND', 'ROMANIA', 'FRANCE', 'SLOVAKIA', 'GERMANY', 'SLOVENIA', 'GREECE'  , 'SPAIN', 'HUNGARY', 'SWEDEN', 'IRELAND']

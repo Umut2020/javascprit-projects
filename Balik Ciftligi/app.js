@@ -112,27 +112,50 @@ const fishFarm = [
   }
 ]
 // stok miktari girildiginde baliklarin listesine ulasilabilir
-console.log(balikStogunuBulma(fishFarm , 500))
+
+let besYuzKgUzerindeStoguOlanBaliklar = balikStogunuBulma(fishFarm , 500)
+console.log(`500 Kg'in uzerinde stogu olan baliklar: ${besYuzKgUzerindeStoguOlanBaliklar.toString()}`)
+
 // alt ve ust limitler girildiginde balik listesi ekrana yazdirilir
-console.log(fiyatAraligindaBalikBulma(fishFarm , 9 , 12))
+
+let fiyatAraligindakiBaliklar = fiyatAraligindaBalikBulma(fishFarm , 9 , 12)
+console.log(`9 ile 12 Frank fiyat araligindaki balilar : ${fiyatAraligindakiBaliklar.toString()}`)
+
 // kanton ve mevsim bilgisi girilerek balik listesine ulasilabilir
-console.log(kantonVeMevsimeGoreBalikBulma(fishFarm , 'Winter' , 'BE'))
+
+let berndeSatilanKisSezonuBaliklari = kantonVeMevsimeGoreBalikBulma(fishFarm , 'Winter' , 'BE')
+
+console.log(`Bernde kis sezonunda satilan baliklar : ${berndeSatilanKisSezonuBaliklari.toString()}`)
+
 /******************************** */
-console.log(sonKullanimTarihlerineBakma())
+
+// 4. sorunun cozumu bana ait degil --> incelenmek icin burada 
+
+console.log(orderExpirationDate(fishFarm))
 /**
  * on frankin altinda ve Avrupadan gelen baliklarin sirali listesi
  * paremetresiz fonksiyon ile
  */
-console.log(onFranklikAvrupaBaliklariniBulmaVeSiralama())
+let onFrankAltiAvrupaBaliklari = onFranklikAvrupaBaliklariniBulmaVeSiralama()
+console.log(`10 Frank altinda Avrupada satilan baliklar : ${onFrankAltiAvrupaBaliklari.toString()}`)
+
 // tum stoklardaki baliklari toplayan paremetresiz fonksiyon
-console.log(tumStoklardakiBalikDurumu())
+
+let stoklardakiBalikMiktari = tumStoklardakiBalikDurumu()
+console.log(`Stoklardaki toplam balik miktari : ${stoklardakiBalikMiktari.toString()}`)
+
 // en pahali baligi paremetresi fonksiyon ile bulma
 console.log(enPahaliBaligiBulma())
 // ****************************** */
 console.log(enUzunSureDayanabilenBaliklarinUlkesiniBulma(fishFarm))
 // ******************************* */ 
-console.log(listOrtalamasiBulma(kisSonbaharVeRemondeRegionunFiyatListesiniBulma()))
+let kisSonbaharVeRemondeRegionunFiyatListesi = listOrtalamasiBulma(kisSonbaharVeRemondeRegionunFiyatListesiniBulma())
+
+console.log(`Kis ve Sonbahar mevsimlerinde Remonde Swiss bolgesinde satilan baliklarin ortalama fiyati : ${kisSonbaharVeRemondeRegionunFiyatListesi} CH.`)
+
 /*********************************** */
-console.log(kantonTicinoStokBalikAdedi(fishFarm))
+let ticinoStoktakiBalik = kantonTicinoStokBalikAdedi(fishFarm)
+console.log(`Ticino kantonunda stoktaki balik miktari : ${ticinoStoktakiBalik}`)
 /**************************** */
-console.log(sezonaVeKantonaGoreOrtalamaBalikGramajiBulma(fishFarm , 'Summer' , 'ZH'))
+let avrupaDisindanGelenYazlikZurichBaliklari = sezonaVeKantonaGoreOrtalamaBalikGramajiBulma(fishFarm , 'Summer' , 'ZH')
+console.log(`Avrupa kitasi disindan gelen ve yazlik sezonda Zurich te satilan baliklarin ortalama gramaji : ${avrupaDisindanGelenYazlikZurichBaliklari} gr.`)
