@@ -1,0 +1,28 @@
+.col-8 {
+    background-color: rgb(221, 221, 219);
+
+}
+
+#alisveris-sepeti-yazisi {
+    text-align: center;
+    background-color: rgb(181, 215, 238);
+}
+
+.col-4 {
+    background-color: rgb(238, 241, 236);
+}
+
+#title,
+body {
+    text-align: center;
+    background-color: rgb(223, 232, 250);
+}
+
+img {
+    width: 6vw;
+    height: 5vh;
+}
+
+h4 {
+    background-color: rgb(181, 215, 238);
+}
