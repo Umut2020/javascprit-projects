@@ -1,7 +1,7 @@
-let timezone = ''; // Europe/Zurich, America/New_York
+let timezone = 'bos'; // Europe/Zurich, America/New_York
 
 setInterval(function () {
-  clickEventHandler()
+  if (timezone != 'bos') {clickEventHandler()}
 }, 1000)
 
 document.querySelector('#select-box').addEventListener('change', function (pEvent) {

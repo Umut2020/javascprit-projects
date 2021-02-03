@@ -1,7 +1,13 @@
+body {
+    background-color: rgb(215, 223, 240);
+}
+
 #main {
     margin: 50px auto;
+    padding: 15px;
     width: 80vw;
     box-shadow: 2px 2px 10px 3px rgb(143, 134, 134);
+    background-color: rgb(250, 247, 242);
 }
 
 .form-select {

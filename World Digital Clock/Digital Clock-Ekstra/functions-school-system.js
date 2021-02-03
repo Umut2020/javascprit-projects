@@ -20,12 +20,12 @@ function getPersonTotal (pList) {
 
 function createPersonList (pList) {
   let personRows =
-  pList.map(person => `
+  pList.map((person, index) => `
     <tr>
         <td>${person.firstName} </td>
         <td>${person.lastName}</td>
         <td>${person.age}</td>
-        <td><button type="button" class="btn btn-danger">Sil</button></td>
+        <td><button type="button" class="btn btn-danger" id="${index}">Sil</button></td>
     </tr>
         `).join('')
 
@@ -58,4 +58,17 @@ function createTable (pList) {
 
 function renderUI (pList = []) {
   document.querySelector('#table-list').innerHTML = createTable(pList)
+}
+
+document.querySelector('#table-list').addEventListener('click' , function (e) {
+  let clickedElementinTabble = e.target
+  if (clickedElementinTabble.tagName.toLowerCase() === 'button') {
+    let index = parseInt(clickedElementinTabble.id)
+    removeFromTableList(index)
+  }
+})
+
+function removeFromTableList (pDeletedIndex) {
+  tableList.splice(pDeletedIndex, 1)
+  renderUI(tableList) // arrrayden sildigimiz icin arrayi yeniden ekrana bastirmaliyiz
 }

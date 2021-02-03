@@ -6,7 +6,4 @@ function addUser (pEvent) {
   renderUI(tableList)
   pEvent.preventDefault()
 }
-
 const tableList = []
-
-renderUI()
