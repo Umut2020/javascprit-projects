@@ -60,14 +60,6 @@ function renderUI (pList = []) {
   document.querySelector('#table-list').innerHTML = createTable(pList)
 }
 
-document.querySelector('#table-list').addEventListener('click' , function (e) {
-  let clickedElementinTabble = e.target
-  if (clickedElementinTabble.tagName.toLowerCase() === 'button') {
-    let index = parseInt(clickedElementinTabble.id)
-    removeFromTableList(index)
-  }
-})
-
 function removeFromTableList (pDeletedIndex) {
   tableList.splice(pDeletedIndex, 1)
   renderUI(tableList) // arrrayden sildigimiz icin arrayi yeniden ekrana bastirmaliyiz
