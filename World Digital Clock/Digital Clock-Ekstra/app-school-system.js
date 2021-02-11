@@ -1,4 +1,14 @@
-document.querySelector('#btn-primary').addEventListener('click', addUser)
+document.querySelector('#btn-primary').addEventListener('click', main)
+
+spaceController()
+
+function main () {
+  if (dogrulamaHatasiRender == true) {
+    addUser(pEvent)
+  }else {
+    alert('verileri kotrol ediniz')
+  }
+}
 
 function addUser (pEvent) {
   let person = getPerson()
@@ -7,6 +17,7 @@ function addUser (pEvent) {
   pEvent.preventDefault()
   spaceController()
 }
+
 const tableList = []
 
 document.querySelector('#table-list').addEventListener('click' , function (e) {

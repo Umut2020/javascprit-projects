@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Word Kelime</title>
+</head>
+
+<body>
+
+    <div class="container" id="oyunsahasi">
+        <div id="aciklama">
+            <h1>GAME WORD</h1>
+            <h3>Oyun Kurallari</h3>
+            <h4>1.Oyun Random butonu ile baslar <br>
+                2.Siralamadan eminseniz Check butonuna basiniz <br>
+                3. Baska kelimelere gecmek icin Random butonunu kullaniniz
+            </h4>
+        </div>
+        <div id="kutucuk">
+            <div draggable="true" class="box" id="first-box">---</div>
+            <div draggable="true" class="box" id="second-box">---</div>
+            <div draggable="true" class="box" id="third-box">---</div>
+        </div>
+
+        <div>
+            <button id="random-btn">Random</button>
+            <button id="random-check">Check</button>
+        </div>
+
+    </div>
+
+    <script src="./drag-drop-functions.js"></script>
+    <script src="./game-functions.js"></script>
+    <script src="./app.js"></script>
+
+</body>
+
+</html>

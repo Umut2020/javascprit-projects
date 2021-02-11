@@ -1,0 +1,50 @@
+body {
+    background-color: rgb(182, 182, 182);
+}
+
+#aciklama {
+    text-align: center;
+}
+
+button {
+    background-color: #0d70cc;
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    margin: 2px 2px;
+    cursor: grabbing;
+    width: 6vw;
+}
+
+#kutucuk {
+    display: flex;
+    justify-content: space-around;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(226, 225, 224);
+    width: 60vw;
+    height: 60vh;
+    margin: auto;
+    margin-top: 10vw;
+    box-shadow: 5px 10px rgb(87, 81, 81);
+}
+
+.box {
+    border: 3px solid rgb(42, 40, 40);
+    background-color: #ddd;
+    border-radius: .5em;
+    padding: 10px;
+    cursor: grab;
+    width: 5vw;
+    height: 5vh;
+    margin: 25px;
+
+}
+
+.box.over {
+    border: 3px dotted rgb(196, 31, 31);
+}
