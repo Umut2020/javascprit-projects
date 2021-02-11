@@ -1,7 +1,7 @@
 function handleDragStart (e) {
   this.style.opacity = '0.4'
 
-  dragSource = this
+  dragSourceLocal = this
 
   e.dataTransfer.effectAllowed = 'move'
   e.dataTransfer.setData('text/html', this.innerHTML)
@@ -23,8 +23,8 @@ function handleDragLeave (e) {
 }
 
 function handleDrop (e) {
-  if (dragSource != this) {
-    dragSource.innerHTML = this.innerHTML
+  if (dragSourceLocal != this) {
+    dragSourceLocal.innerHTML = this.innerHTML
     this.innerHTML = e.dataTransfer.getData('text/html')
   }
 }

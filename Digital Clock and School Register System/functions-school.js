@@ -21,38 +21,38 @@ function getPersonTotal (pList) {
 function createPersonList (pList) {
   let personRows =
   pList.map((person, index) => `
-    <tr>
-        <td>${person.firstName} </td>
-        <td>${person.lastName}</td>
-        <td>${person.age}</td>
-        <td><button type="button" class="btn btn-danger" id="${index}">Sil</button></td>
-    </tr>
-        `).join('')
+      <tr>
+          <td>${person.firstName} </td>
+          <td>${person.lastName}</td>
+          <td>${person.age}</td>
+          <td><button type="button" class="btn btn-danger" id="${index}">Sil</button></td>
+      </tr>
+          `).join('')
 
   return personRows
 }
 
 function createTable (pList) {
   let table = `
-  <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">Isim</th>
-        <th scope="col">Soyisim</th>
-        <th scope="col">Age</th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-      ${createPersonList (pList)}
-      <tr>
-        <th colspan="4">
-          Toplam Ogrenci Sayisi :${getPersonTotal(pList)}
-        </th>
-      </tr>
-    </tbody>
-  </table>
-    `
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Isim</th>
+          <th scope="col">Soyisim</th>
+          <th scope="col">Age</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        ${createPersonList (pList)}
+        <tr>
+          <th colspan="4">
+            Toplam Ogrenci Sayisi :${getPersonTotal(pList)}
+          </th>
+        </tr>
+      </tbody>
+    </table>
+      `
   return table
 }
 

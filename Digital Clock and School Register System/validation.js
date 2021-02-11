@@ -12,9 +12,9 @@ function succesInBox (input) {
   input.className = 'form-control is-valid'
 }
 
-let isim = true
-let soyisim = true
-let yas = true
+let isim = ''
+let soyisim = ''
+let yas = ''
 
 function spaceController () {
   if (!isNotEmpty(firstNameElement.value)) {
@@ -22,12 +22,14 @@ function spaceController () {
     isim = false
   }else {
     succesInBox(firstNameElement)
+    isim = true
   }
   if (!isNotEmpty(lastNameElement.value)) {
     errorInBox(lastNameElement, 'Bu alan bos birakilamaz')
     soyisim = false
   }else {
     succesInBox(lastNameElement)
+    soyisim = true
   }
   if (!isNotEmpty(ageElement.value)) {
     errorInBox(ageElement , 'Bu alan bos birakilamaz')
@@ -37,15 +39,14 @@ function spaceController () {
     yas = false
   }else {
     succesInBox(ageElement)
+    yas = true
   }
 }
 
 function dogrulamaHatasiRender () {
   if ((isim === true) && (soyisim === true) && (yas === true)) {
-    console.log('true')
     return true
   }else {
-    console.log('false')
     return false
   }
 }
