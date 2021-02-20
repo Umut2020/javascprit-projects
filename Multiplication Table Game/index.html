@@ -8,20 +8,54 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
         integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <title>Multiplication Table Game</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 
-
 <body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-4">
+                <div id="player-table">
 
+                </div>
+                <div class="input-group">
+                    <input type="text" value="" id="first-name" aria-label="First name" placeholder="First Name"
+                        class="form-control">
+                    <input type="text" value="" id="last-name" aria-label="Last name" placeholder="Last Name"
+                        class="form-control">
+                    <div class="input-group-prepend">
+                        <button type="button" id="btn-add-register" class="btn btn-primary">Register</button>
+                    </div>
+                </div>
+                <div>
+                    <div class="shadow p-3 mb-5 bg-white rounded">Oyuna baslamak icin kayit olun!!!!</div>
+                </div>
+            </div>
+            <div id="game-area" class="col-8 d-flex justify-content-center m-auto">
+                <div class="card" style="width: 35vw">
+                    <div class="border border-danger m-3" id="time"></div>
+                    <img src="./images/images.jfif" class="card-img-top img-thumbnail" alt="...">
+                    <div class="card-body">
+                        <div class="span">
+                            <span id="first-number" class="border border-primary m-1">--</span>
+                            <span class="border border-secondary m-1">X</span>
+                            <span id="second-number" class="border border-success m-1">--</span>
+                            <span class="border border-danger m-1">=</span>
+                            <span class="border border-danger m-1"><input id="input-player" type="text" value=""
+                                    placeholder="?"></span>
+                        </div>
+                    </div>
+                    <button type="button" id="check-btn" class="btn btn-primary">Check</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <script src="./data-model.js"></script>
+    <script src="./dom.js"></script>
+    <script src="./app.js"></script>
 
-
-
-
-
-
-
-
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
     </script>
