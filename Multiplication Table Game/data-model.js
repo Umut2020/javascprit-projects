@@ -107,7 +107,6 @@ function refreshGameArea () {
  */
 function checkAndScore (playerIndex) {
   document.getElementById('check-btn').addEventListener('click', function (e) {
-    console.log('jasklfjskldhf')
     let playerInput = document.getElementById('input-player').value
     if (playerInput == firstNummer * secondNummer) {
       personList[playerIndex].totalScore += 10
