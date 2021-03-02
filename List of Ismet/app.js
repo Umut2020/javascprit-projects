@@ -26,9 +26,10 @@ const custumerList = [
     custumerSurname: 'Gungor',
     deadList: [
       {
-        murderName: 'kant',
-        murderSurname: 'turan',
+        murderName: 'Sel',
+        murderSurname: 'Tur',
         description: 'tarihinde fertig',
+        statusIsDead: false,
         addresses: [
           'Yildirim Mah' ,
           'Gunes Sokak'
@@ -38,9 +39,30 @@ const custumerList = [
         murderName: 'mevlut',
         murderSurname: 'bahceli',
         description: 'tarihinde fertig',
+        statusIsDead: false,
         addresses: [
           'Yanlis Mah' ,
           'Taraf Sokak'
+        ]
+      },
+      {
+        murderName: 'kanik',
+        murderSurname: 'tus',
+        description: 'tarihinde fertig',
+        statusIsDead: false,
+        addresses: [
+          'Hinc Mah' ,
+          'Ay Sokak'
+        ]
+      },
+      {
+        murderName: 'Tarik',
+        murderSurname: 'Neseli',
+        description: 'tarihinde fertig',
+        statusIsDead: false,
+        addresses: [
+          'Yan Mah' ,
+          'Akin Sokak'
         ]
       }
 
@@ -51,12 +73,33 @@ const custumerList = [
     custumerSurname: 'Kano',
     deadList: [
       {
-        murderName: 'kanit',
-        murderSurname: 'tufo',
+        murderName: 'Buray',
+        murderSurname: 'Ufo',
         description: 'tarihinde fertig',
+        statusIsDead: false,
         addresses: [
-          'Yildirim Mah' ,
-          'Gunes Sokak'
+          'Yilmaz Mah' ,
+          'Guney Sokak'
+        ]
+      },
+      {
+        murderName: 'Veli',
+        murderSurname: 'Kucuk',
+        description: 'tarihinde fertig',
+        statusIsDead: false,
+        addresses: [
+          'Erg Mah' ,
+          'Demir Sokak'
+        ]
+      },
+      {
+        murderName: 'Monork',
+        murderSurname: 'Cafu',
+        description: 'tarihinde fertig',
+        statusIsDead: false,
+        addresses: [
+          'Ulucan Mah' ,
+          'Teras Sokak'
         ]
       }
 

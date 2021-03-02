@@ -2,6 +2,7 @@ showStartView(custumerList)
 
 function showStartView (pList = []) {
   document.getElementById('listed-area').innerHTML = createStartView(pList)
+  showNewCustumerView()
 }
 
 function createStartView (pCustumerList) {
@@ -61,10 +62,12 @@ function createNewCustumerName () {
   `
 }
 
-document.getElementById('btn-new-custumer').addEventListener('click' , function (e) {
-  addNewCustumer()
-  showStartView(custumerList)
-})
+function showNewCustumerView () {
+  document.getElementById('btn-new-custumer').addEventListener('click' , function (e) {
+    addNewCustumer()
+    showStartView(custumerList)
+  })
+}
 
 function addNewCustumer () {
   let custumerName = document.querySelector('#cus-name').value
@@ -73,6 +76,7 @@ function addNewCustumer () {
   let murderSurname = document.querySelector('#mur-surname').value
   let murderExp = document.querySelector('#explation').value
   let murderAddress = document.querySelector('#address').value
+  let murderStatus = false
   custumerList.push({
     custumerName: `${custumerName}`,
     custumerSurname: `${custumerSurname}`,
@@ -81,6 +85,7 @@ function addNewCustumer () {
         murderName: `${murderName}`,
         murderSurname: `${murderSurname}`,
         description: `${murderExp}`,
+        statusIsDead: `${murderStatus}`,
         addresses: [
           `${murderAddress}`
 
@@ -90,5 +95,4 @@ function addNewCustumer () {
     ]
   }
   )
-  return custumerList
 }
