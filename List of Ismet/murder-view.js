@@ -2,8 +2,6 @@ document.getElementById('listed-area').addEventListener('click' , function (e) {
   if (e.target.className === 'btn btn-success') {
     let indexCustumer = e.target.id
     showMurderList(custumerList[indexCustumer].deadList , indexCustumer)
-  }else if (e.target.className === 'btn btn-warning') {
-    console.log('dead buton') //
   }
 })
 
@@ -50,7 +48,7 @@ function createMurderInfo (pList, pCustumerID) {
       <td>${murder.statusIsDead}</td>
       <td>${murder.description}</td>
       <td><button type="button" id="${index}" data="${pCustumerID}" class="btn btn-info">Show Adresses!</button></td>
-      <td><button type="button"  class="btn btn-warning">Dead</button></td>
+      <td><button type="button" id="${index}" data="${pCustumerID}" class="btn btn-warning">Dead</button></td>
     </tr>
     `).join('')
 }

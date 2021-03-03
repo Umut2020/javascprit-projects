@@ -1,8 +1,13 @@
 document.getElementById('listed-area').addEventListener('click' , function (e) {
   if (e.target.className === 'btn btn-info') {
     let murderIndex = e.target.id
-    let custemerIndex = e.target.getAttribute('data')
-    showMurderAddressList(custumerList[custemerIndex].deadList[murderIndex].addresses)
+    let custumerIndex = e.target.getAttribute('data')
+    showMurderAddressList(custumerList[custumerIndex].deadList[murderIndex].addresses)
+  }else if (e.target.className === 'btn btn-warning') {
+    let murderIndex = e.target.id
+    let custumerIndex = e.target.getAttribute('data')
+    custumerList[custumerIndex].deadList[murderIndex].statusIsDead = true
+    showMurderList(custumerList[custumerIndex].deadList , custumerIndex)
   }
 })
 
